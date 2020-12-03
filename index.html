@@ -38,7 +38,7 @@
             function check_selects() {
                 var eth = $("input[name='ethnicity']").val();
                 var eye = $("input[name='eyecolor']").val();
-                if ((eth == 'black' || eth == 'asian' || eth == 'latino') && (eye == 'blue' || eye == 'green' || 'grey')) {
+                if ((eth == 'black' || eth == 'asian' || eth == 'latino') && (eye == 'blue' || eye == 'green' || eye == 'grey')) {
                     alert("Error: Invalid Selections");
                     return false;
                 }
