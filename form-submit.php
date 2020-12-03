@@ -31,7 +31,24 @@
          
          }
          
-         extract ($_POST);
+         extract ($_REQUEST);
+      
+      
+         //email content
+         $subject = "Welcome to your new life";
+         $emailMSG = "Thank you for your order!  \nYour new identity information has been sent to the email you entered: $email";
+
+
+         //call id image creator, add image to email
+
+
+         mail($email, $subject, $emailMSG);
+
+         //form to leave a review
+         //send form data to database
+         //display reviews
+      
+      
          if(isset($star)){
          if($star > 0 & $star <6 ){
          update($star[0]);
@@ -39,6 +56,7 @@
          
          }	
          $conn->close();
+      
          
          ?>
    </body>
