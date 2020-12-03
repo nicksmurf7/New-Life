@@ -4,6 +4,11 @@
 body {
 	background-color:#17161F;
 	color: ghostwhite;
+	display: block;
+	text-align: center;
+	align-content: center;
+	font-size:18px;
+	font-family: FreeMono, monospace, serif;
 }
 h1 {
 	
@@ -15,12 +20,4 @@ h1 {
 	width: 400px;
 	text-align: center;
 	
-}
-
-
-body{
-	display: block;
-	text-align: center;
-	align-content: center;
-	font-size:18px;
 }
