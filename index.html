@@ -22,28 +22,30 @@
                  $(".person6").hide();
                  $(toShow).show();
             }
-            function validate() {
-                return (check_selects() && check_email());
-            }
-            function check_email() {
-                var check = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-                var ine = $("input[name='email']").val();
-                if (ine.match(check)) {
-                    return true;
-                }   
-                alert("Error: Invalid Email Inputted");
-                return false;
-            }
        })
+		function validate() {
+                	return (check_selects() && check_email());
+            	}
+            
+		function check_email() {
+                	var check = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+                	var ine = $("input[name='email']").val();
+                	if (ine.match(check)) {
+                    		return true;
+                }   
+                	alert("Error: Invalid Email Inputted");
+                	return false;
+            	}
+		
 		function check_selects() {
-                var eth = $("input[name='ethnicity']").val();
-                var eye = $("input[name='eyecolor']").val();
-                if ((eth == 'black' || eth == 'asian' || eth == 'latino') && (eye == 'blue' || eye == 'green' || eye == 'grey')) {
-                    alert("Error: Invalid Selections");
-                    return false;
-                }
-                return true;
-        }
+                	var eth = $("input[name='ethnicity']").val();
+                	var eye = $("input[name='eyecolor']").val();
+                	if ((eth == 'black' || eth == 'asian' || eth == 'latino') && (eye == 'blue' || eye == 'green' || eye == 'grey')) {
+                    		alert("Error: Invalid Selections");
+                    		return false;
+               		}
+                	return true;
+        	}
         </script>
 </head>
 
