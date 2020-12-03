@@ -10,6 +10,16 @@
 </head>
         
         <script language = "javascript">
+         $(document).ready(function() {
+             $(".person6").hide();
+             $(".person1").show();
+             
+             document.forms[0].numids.onchange = function() 
+		    {   
+                 toShow = ".person" + this.value;
+                 $(".person6").hide();
+                 $(toShow).show();
+            }
             function validate() {
                 return (check_selects() && check_email());
             }
@@ -32,7 +42,7 @@
                 }
                 return true;
         }
-            
+       }
         </script>
 
  <h1>Welcome to your New Life!</h1>
