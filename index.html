@@ -1,1 +1,51 @@
 # home page
+
+
+<form onsubmit="ID_CARD.php">
+        <p>Please select your sex:</p>
+        <input type="radio" id="male" name="sex" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="sex" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="sex" value="other">
+        <label for="other">Other</label>
+        <label for = "nationality"> Please select your nationality: </label>
+        <select name = "nationality" id = "nationality">
+            <option value = "au"> au </option>
+            <option value = "br"> br </option>
+            <option value = "ca"> ca </option>
+            <option value = "ch"> ch </option>
+            <option value = "de"> de </option>
+            <option value = "dk"> dk </option>
+            <option value = "es"> es </option>
+            <option value = "fi"> fi </option>
+            <option value = "fr"> fr </option>
+            <option value = "gb"> gb </option>
+            <option value = "ie"> ie </option>
+            <option value = "ir"> ir </option>
+            <option value = "no"> no </option>
+            <option value = "nl"> nl </option>
+            <option value = "nz"> nz </option>
+            <option value = "tr"> tr </option>
+            <option value = "us"> us </option>
+        </select>
+        <label for = "ethnicity"> Please select your ethnicity: </label>
+        <select name = "ethnicity" id = "ethnicity">
+            <option value = "asian"> asian </option>
+            <option value = "black"> black </option>
+            <option value = "latino"> latino </option>
+            <option value = "white"> white </option>
+        </select>
+        <label for = "eyecolor"> Please select your eye color: </label>
+        <select name = "eyecolor" id = "eyecolor">
+            <option value = "brown"> brown </option>
+            <option value = "blue"> blue </option>
+            <option value = "grey"> grey </option>
+            <option value = "green"> green </option>
+        </select>
+        <p>
+            <input type="radio" name="notdonor" value="notdonor" checked="checked" />Not a Organ Donor
+            <input type="radio" name='donor' value='delivery' /> Organ Donor
+        </p>
+        <p>Email: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<input type="text" name='email' required /></p>
+    
