@@ -24,4 +24,6 @@ h1 {
 
 div {
 	border: solid 1px white;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
