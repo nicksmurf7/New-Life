@@ -34,8 +34,8 @@
                 alert("Error: Invalid Email Inputted");
                 return false;
             }
-            
-            function check_selects() {
+       })
+		function check_selects() {
                 var eth = $("input[name='ethnicity']").val();
                 var eye = $("input[name='eyecolor']").val();
                 if ((eth == 'black' || eth == 'asian' || eth == 'latino') && (eye == 'blue' || eye == 'green' || eye == 'grey')) {
@@ -44,7 +44,6 @@
                 }
                 return true;
         }
-       })
         </script>
 </head>
 
@@ -52,7 +51,7 @@
         
 </body>
     
-<form method="post" action="ID_CARD.php" onsubmit="validate();" onchange = "check_selects();">
+<form method="post" action="ID_CARD.php" onsubmit="validate();" onchange="check_selects();">
         <p>Email: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<input type="text" name='email' required /></p>
         <label for = "numids"> Please select the number of IDs you need: </label>
         <select name = "numids" id = "numids" >
