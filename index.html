@@ -8,9 +8,35 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>New Life </title
 </head>
+        
+        <script language = "javascript">
+            function validate() {
+                return (check_selects() && check_email());
+            }
+            function check_email() {
+                var check = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+                var ine = $("input[name='email']").val();
+                if (ine.match(check)) {
+                    return true;
+                }   
+                alert("Error: Invalid Email Inputted");
+                return false;
+            }
+            
+            function check_selects() {
+                var eth = $("input[name='ethnicity']").val();
+                var eye = $("input[name='eyecolor']").val();
+                if ((eth == 'black' or eth == 'asian' or eth == 'latino') && (eye == 'blue' or eye == 'green' or 'grey')) {
+                    alert("Error: Invalid Selections");
+                    return false;
+                }
+                return true;
+        }
+            
+        </script>
 
  <h1>Welcome to your New Life!</h1>
-<form method="post" action="ID_CARD.php" onsubmit="validate();">
+<form method="post" action="ID_CARD.php" onsubmit="validate();" onchange = "check_selects();">
         <p>Email: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<input type="text" name='email' required /></p>
         <label for = "numids"> Please select the number of IDs you need: </label>
         <select name = "numids" id = "numids" >
