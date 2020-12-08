@@ -33,7 +33,7 @@ h1 {
 }
 
 
-@media screen and (max-width:480px) {
+@media screen and (min-width:414px) and (max-width:870px) {
 	h1 {
 		font-size: 30px;
 	}
