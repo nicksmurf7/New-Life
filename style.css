@@ -1,6 +1,10 @@
 @charset "UTF-8";
 /* CSS Document */
 
+@viewport {
+  width: 100vw; /*Sets the width of the actual viewport to the device width*/
+}
+
 body {
 	background-color:#3E3F43;
 	color: ghostwhite;
