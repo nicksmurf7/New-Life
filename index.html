@@ -102,6 +102,7 @@
             info += '<input type="radio" name="donor' + i + '" value="notdonor"/> Not an Organ Donor  ';
             info += '<input type="radio" name="donor' + i + '"value = "donor" /> Organ Donor';
             info += '<input type="radio" name="donor' + i + '"value = "Random" style = "display:none;"checked/></p></div>';
+            info += '<label for = "age"> Please enter your age: </label> <input type = 'text' id = "age" name = "age" + i>;
         }
         document.getElementById("person").innerHTML = info;
     }
