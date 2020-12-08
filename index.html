@@ -54,10 +54,11 @@
     function create_num_form(num) {
         var info = "";
         for(i = 0; i < num; i++) {
-            info += "<div class = 'box'><p>Please select your sex:</p>" + "<input type=\"radio\" id=\"male\" name=\"sex" + i + "\" value=\"male\">";
+            info += "<div class = 'box'><p>Please select your sex:</p>" + "<input type=\"radio\" id=\"male\" name=\"sex" + i + "\" value=\"male\">"
             info += "<label for=\"male\">Male</label><br><input type=\"radio\" id=\"female\" name=\"sex" + i + "\"value=\"female\">";
             info += '<label for="female">Female</label><br> <input type="radio" id="other" name="sex' + i + '""value="other" > <label for="other">Other</label><br><br>';
-            info +='<input type="radio" style="display:none;" name="sex' + i + '"value="" checked> ';
+            info += '<input type="radio" style="display:none;" name="sex\' + i + '"value="" checked> ';
+            info += '<label for = "age"> Please enter your age: </label><input type = \'text\' id = "age" name = \'age' + i'\'>';
             info += '<label for = "nationality"> Please select your nationality: </label><select name = "nationality' + i + '" id = "nationality">';
             info += `
                     <option value = "" checked> Random </option>
@@ -102,7 +103,6 @@
             info += '<input type="radio" name="donor' + i + '" value="notdonor"/> Not an Organ Donor  ';
             info += '<input type="radio" name="donor' + i + '"value = "donor" /> Organ Donor';
             info += '<input type="radio" name="donor' + i + '"value = "Random" style = "display:none;"checked/></p></div>';
-            info += '<label for = "age"> Please enter your age: </label> <input type = 'text' id = "age" name = "age" + i>';
         }
         document.getElementById("person").innerHTML = info;
     }
