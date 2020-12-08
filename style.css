@@ -34,7 +34,10 @@ h1 {
 
 
 @media screen and (max-width:480px) {
-	.centertextW {
+	h1 {
+		font-size: 30px;
+	}
+	body {
 		font-size: 24px;
 	}
 }
