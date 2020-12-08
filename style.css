@@ -37,7 +37,7 @@ h1 {
 }
 
 
-@media screen and (max-width:768px) {
+@media handheld, screen and (max-width:768px) {
 	
 	body {
 		font-size: 24px;
@@ -48,7 +48,7 @@ h1 {
 	}
 }
 
-@media only screen and (max-width: 500px) {
+@media handheld, screen and (max-width: 500px) {
 	body {
 		font-size: 24px;
 		color: blue;
@@ -58,9 +58,6 @@ h1 {
 	}
 }	
 	
-@media only screen and (min-width: 769px) {
- /* Design for desktop */
-}
 
 
  
