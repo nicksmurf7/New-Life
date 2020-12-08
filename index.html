@@ -21,6 +21,14 @@
             check_email();
 
         }
+        document.forms[0].ethnicity.onchange = function() {
+            change_enthnicity()
+
+        }
+        document.forms[0].eyecolor.onchange = function() {
+            change_eyecolor()
+
+        }
         
     })
 
@@ -93,7 +101,7 @@
                             <p> `;
             info += '<input type="radio" name="donor' + i + '" value="notdonor"/> Not an Organ Donor  ';
             info += '<input type="radio" name="donor' + i + '"value = "donor" /> Organ Donor';
-            info += '<input type="radio" name="donor' + i + '"value = "Random" style = "display:none;"checked/> Random</p></div>';
+            info += '<input type="radio" name="donor' + i + '"value = "Random" style = "display:none;"checked/></p></div>';
         }
         document.getElementById("person").innerHTML = info;
     }
