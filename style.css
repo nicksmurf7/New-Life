@@ -33,16 +33,19 @@ h1 {
 }
 
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:480px) {
 	.centertextW {
-		width: 350px;
+		font-size: 24px;
 	}
 }
 
-@media screen and (max-width:700px) {
-	.centertextB {
-		width: 350px;
-	}
+@media only screen and (min-width: 481px) {
+ /* Design for tablets */
+}	
+	
+@media only screen and (min-width: 769px) {
+ /* Design for desktop */
 }
+
 
  
