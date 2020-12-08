@@ -9,6 +9,10 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script language="javascript">
+    if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+        alert('Got here using the browser "Back" or "Forward" button.');
+    }
+
     var num= 1;
     $(document).ready(function() {
         create_num_form(1);
