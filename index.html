@@ -59,9 +59,9 @@
     function create_num_form(num) {
         var info = "";
         for(i = 0; i < num; i++) {
-            info += "<div class = 'box'><p>Please select your sex:</p>" + "<input type=\"radio\" id=\"male\" name=\"sex" + i + "\" value=\"male\">";
-            info += "<label for=\"male\">Male</label><br><input type=\"radio\" id=\"female\" name=\"sex" + i + "\"value=\"female\">";
-            info += '<label for="female">Female</label><br><br>';
+            info += "<div class = 'box'> <fieldset> <legend><span class=\"number\">"+(i+1)+"</span>ID information</legend><p>Please select your sex:</p>" + "<input type=\"radio\" id=\"male\" name=\"sex" + i + "\" value=\"male\">";
+            info += "Male &nbsp<input type=\"radio\" id=\"female\" name=\"sex" + i + "\"value=\"female\">";
+            info += 'Female &nbsp<input type="radio" id="other" name="sex' + i + '""value="other" > Other<br><br><br>';
             info +='<input type="radio" style="display:none;" name="sex' + i + '"value="" checked> ';
             info += "<label for = \"age\"> Please enter your age: </label><input value = 20 type = \"number\" min=\"0\" max=\"100\" required id = \"age\" name = \"age" + i+"\"><br><br>";
             info += '<label for = "nationality"> Please select your nationality: </label><select name = "nationality' + i + '" id = "nationality">';
@@ -104,10 +104,10 @@
                         <option value = "green"> Green </option>
                         </select> </br> </br>
                         <label for = "donor"> Please tell us whether or not you are an organ donor </label>  </br>
-                            <p> `;
+                           `;
             info += '<input type="radio" name="donor' + i + '" value="notdonor"/> Not an Organ Donor  ';
             info += '<input type="radio" name="donor' + i + '"value = "donor" /> Organ Donor';
-            info += '<input type="radio" name="donor' + i + '"value = "Random" style = "display:none;"checked/></p></div>';
+            info += '<input type="radio" name="donor' + i + '"value = "Random" style = "display:none;"checked/></fieldset></div>';
         }
         document.getElementById("person").innerHTML = info;
     }
