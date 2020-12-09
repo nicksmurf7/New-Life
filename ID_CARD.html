@@ -1,212 +1,198 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="card_style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <link rel="stylesheet" type="text/css" href="style.css" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>New Life</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC" />
-        <style>
-            .bgimg {
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-image: url("background.jpg");
-                min-height: 100%;
-            }
-            .PrettyFont {
-                font-family: "Amatic SC", sans-serif;
-            }
-        </style>
+	
+	<title>New ID Card</title>
 
-        <script language="javascript">
-            $(window).scroll(function () {
-                // console.log('wwww');
-                if ($(this).scrollTop() > 820) {
-                    $(".js-top-scrollerx").fadeIn();
-                } else {
-                    $(".js-top-scrollerx").fadeOut();
-                }
-            });
-            //Click event to scroll to top
-            $(".js-top-scrollerx").click(function () {
-                $("html").animate({ scrollTop: 0 }, 1000);
-                return false;
-            });
+</head>
 
-            if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
-                location.reload();
-            }
 
-            var num = 1;
-            $(document).ready(function () {
-                create_num_form(1);
-                document.forms[0].numids.onchange = function () {
-                    num = this.value;
-                    create_num_form(this.value);
-                };
-                document.forms[0].email.onchange = function () {
-                    check_email();
-                };
-                document.forms[0].ethnicity.onchange = function () {
-                    change_enthnicity();
-                };
-                document.forms[0].eyecolor.onchange = function () {
-                    change_eyecolor();
-                };
-            });
+<body>
+	
+	<center>
+	<h1> New ID Card </h1>
 
-            function validate() {
-                return check_email();
-            }
 
-            function check_email() {
-                var check = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-                var ine = $("input[name='email']").val();
+	<div id="slide-wrapper" >
+		<!-- <img id="slideLeft" class="arrow" src="images/arrow-left.png"> -->
+		<i 	
+			id="slideLeft"
+			class="fa fa-chevron-left arrow"
+		>	
+		</i>
 
-                if (ine.match(check)) {
-                    document.getElementById("alert").innerHTML = "<p> </p>";
-                    return true;
-                }
+			<div id="slider">
+				<div class = "panel">
+					<div class = "id_card">
+						<div class = "id_card__face id_card__face-front">
+							
+							<div class="top">
+								<div class="tag_hole"></div>
+								<h2><img src="corgi.jpg"  class= "avatar" alt="Avatar" ></h2>
+							</div>
+							<div class="bottom_info_box">
+								<h2>Pillow Li </h2>
+								<h5>Doggy Leader</h5>
+								<h3>Doggy Academy</h3>
+							</div>
+						</div>
 
-                document.getElementById("alert").innerHTML = '<p style = "color:red;">Error: Invalid Email Inputted</p>';
-                return false;
-            }
+						<div class = "id_card__face id_card__face-back">
+							<div class="tag_hole"></div>
+							<div class="back_info_box">
+								<h2>Pillow Li </h2>
+								<h5>Doggy Leader</h5>
+								<h3>Doggy Academy</h3>
+							</div>
+						</div>
 
-            function create_num_form(num) {
-                var info = "";
-                for (i = 0; i < num; i++) {
-                    info +=
-                        "<div class = 'box'> <fieldset> <legend><span class=\"number\">" +
-                        (i + 1) +
-                        '</span>ID information</legend><label for = "sex">Please select your sex:</label>' +
-                        '<input type="radio" id="male" name="sex' +
-                        i +
-                        '" value="male">';
-                    info += 'Male &nbsp<input type="radio" id="female" name="sex' + i + '"value="female">';
-                    info += 'Female &nbsp<input type="radio" id="other" name="sex' + i + '""value="other" > Other<br><br>';
-                    info += '<input type="radio" style="display:none;" name="sex' + i + '"value="" checked> ';
-                    info += '<label for = "age"> Please enter your age: </label><input value = 20 type = "number" min="0" max="100" required id = "age" name = "age' + i + '"><br>';
-                    info += '<label for = "nationality"> Please select your nationality: </label><select name = "nationality' + i + '" id = "nationality">';
-                    info += `
-                    <option value = "" checked> Random </option>
-                    <option value = "au"> Australia </option>
-                    <option value = "br"> Brazil </option>
-                    <option value = "ca"> Canada </option>
-                    <option value = "ch"> Switzerland </option>
-                    <option value = "de"> Germany </option>
-                    <option value = "dk"> Denmark </option>
-                    <option value = "es"> Spain </option>
-                    <option value = "fi"> Finland </option>
-                    <option value = "fr"> France </option>
-                    <option value = "gb"> United Kingdom </option>
-                    <option value = "ie"> Ireland </option>
-                    <option value = "ir"> Iran </option>
-                    <option value = "no"> Norway </option>
-                    <option value = "nl"> Netherlands </option>
-                    <option value = "nz"> New Zeland </option>
-                    <option value = "tr"> Turkey </option>
-                    <option value = "us"> United States </option>
-                    </select> </br> </br>
-                `;
-                    info += '<label for = "ethnicity"> Please select your ethnicity: </label><select name = "ethnicity' + i + '" id = "ethnicity" onchange ="change_enthnicity()">';
-                    info += `
-                    <option value = "" checked> Random </option>
-                    <option value = "white"> White </option>
-                    <option value = "asian"> Asian </option>
-                    <option value = "black"> Black </option>
-                    <option value = "latino"> Latino </option>
-                    </select> </br> </br>
-                `;
-                    info += '<label for = "eyecolor"> Please select your eye color: </label><select name = "eyecolor' + i + '" id = "eyecolor" onchange ="change_eyecolor()">';
-                    info += `
-                        <option value = "" checked> Random </option>
-                        <option value = "brown"> Brown </option>
-                        <option value = "blue" > Blue </option>
-                        <option value = "grey" > Grey </option>
-                        <option value = "green"> Green </option>
-                        </select> </br> </br>
-                        <label for = "donor"> Please tell us whether or not you are an organ donor </label> 
-                           `;
-                    info += '<input type="radio" name="donor' + i + '" value="notdonor"/> Not an Organ Donor  &nbsp&nbsp';
-                    info += '<input type="radio" name="donor' + i + '"value = "donor" /> Organ Donor';
-                    info += '<input type="radio" name="donor' + i + '"value = "Random" style = "display:none;"checked/></fieldset></div>';
-                }
-                document.getElementById("person").innerHTML = info;
-            }
+					</div>
 
-            function change_enthnicity() {
-                for (i = 0; i < num; i++) {
-                    value = $("select[name='ethnicity" + i + "']").val();
-                    if (value == "black" || value == "asian" || value == "latino") {
-                        $("select[name =eyecolor" + i + "] option[value= 'blue']").hide();
-                        $("select[name =eyecolor" + i + "] option[value= 'green']").hide();
-                        $("select[name =eyecolor" + i + "] option[value= 'grey']").hide();
-                    } else {
-                        $("select[name =eyecolor" + i + "] option[value= 'blue']").show();
-                        $("select[name =eyecolor" + i + "] option[value= 'green']").show();
-                        $("select[name =eyecolor" + i + "] option[value= 'grey']").show();
-                    }
-                }
-            }
+				</div>
+				<div class = "panel">
+					<div class = "id_card">
+						<div class = "id_card__face id_card__face-front">
+							
+							<div class="top">
+								<div class="tag_hole"></div>
+								<h2><img src="corgi.jpg"  class= "avatar" alt="Avatar" ></h2>
+							</div>
+							<div class="bottom_info_box">
+								<h2>Pillow Li </h2>
+								<h5>Doggy Leader</h5>
+								<h3>Doggy Academy</h3>
+							</div>
+						</div>
 
-            function change_eyecolor() {
-                for (i = 0; i < num; i++) {
-                    value = $("select[name='eyecolor" + i + "']").val();
-                    if (value == "brown" || value == "") {
-                        $("select[name =ethnicity" + i + "] option[value= 'latino']").show();
-                        $("select[name =ethnicity" + i + "] option[value= 'asian']").show();
-                        $("select[name =ethnicity" + i + "] option[value= 'black']").show();
-                    } else {
-                        $("select[name =ethnicity" + i + "] option[value= 'latino']").hide();
-                        $("select[name =ethnicity" + i + "] option[value= 'asian']").hide();
-                        $("select[name =ethnicity" + i + "] option[value= 'black']").hide();
-                    }
-                }
-            }
-        </script>
-    </head>
+						<div class = "id_card__face id_card__face-back">
+							<div class="tag_hole"></div>
+							<div class="back_info_box">
+								<h2>Pillow Li </h2>
+								<h5>Doggy Leader</h5>
+								<h3>Doggy Academy</h3>
+							</div>
+						</div>
 
-    <body>
-        <div class="bgimg w3-display-container w3-grayscale-min" id="home">
-            <div class="w3-display-middle w3-center PrettyFont">
-                <span class="w3-text-white w3-hide-small" style="font-size: 200px;">NEW LIFE</span>
-                <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size: 60px;"><b>NEWLIFE</b></span>
-                <p><a href="#form" class="w3-button w3-xxlarge w3-black">Let's Get Started</a></p>
-            </div>
-        </div>
-        <div class="top-scrollerx js-top-scrollerx svg-icons">
-            <a href="#form">
-                <svg style="vertical-align: text-bottom;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
-                    <path
-                        fill="currentColor"
-                        d="M6.101 261.899L25.9 281.698c4.686 4.686 12.284 4.686 16.971 0L198 126.568V468c0 6.627 5.373 12 12 12h28c6.627 0 12-5.373 12-12V126.568l155.13 155.13c4.686 4.686 12.284 4.686 16.971 0l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L232.485 35.515c-4.686-4.686-12.284-4.686-16.971 0L6.101 244.929c-4.687 4.686-4.687 12.284 0 16.97z"
-                    ></path>
-                </svg>
-            </a>
-        </div>
-        <div id="form" class="PrettyFont" style="font-family: FreeMono; font-size: 1.2em;">
-            <h1 class = "PrettyFont">Welcome to your New Life!</h1>
-            <form method="post" action="https://comp20finalproject.000webhostapp.com/Final/ID_CARD.php" onsubmit="return validate()">
-                <div><label for="email">Email: &nbsp; </label><input type="email" name="email" required /></div>
-                <div id="alert"></div>
-                <label for="numids1"> Please select the number of IDs you need: </label>
-                <select name="numids" id="numids">
-                    <option value="1"> 1 </option>
-                    <option value="2"> 2 </option>
-                    <option value="3"> 3 </option>
-                    <option value="4"> 4 </option>
-                    <option value="5"> 5 </option>
-                    <option value="6"> 6 </option>
-                </select>
-                <div class="person" id="person"></div>
-                <button type="submit" value="Submit">SUBMIT</button>
-            </form>
-        </div>
-    </body>
+					</div>
+
+				</div>
+				<div class = "panel">
+					<div class = "id_card">
+						<div class = "id_card__face id_card__face-front">
+							
+							<div class="top">
+								<div class="tag_hole"></div>
+								<h2><img src="corgi.jpg"  class= "avatar" alt="Avatar" ></h2>
+							</div>
+							<div class="bottom_info_box">
+								<h2>Pillow Li </h2>
+								<h5>Doggy Leader</h5>
+								<h3>Doggy Academy</h3>
+							</div>
+						</div>
+
+						<div class = "id_card__face id_card__face-back">
+							<div class="tag_hole"></div>
+							<div class="back_info_box">
+								<h2>Pillow Li </h2>
+								<h5>Doggy Leader</h5>
+								<h3>Doggy Academy</h3>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class = "panel">
+					<div class = "id_card">
+						<div class = "id_card__face id_card__face-front">
+							
+							<div class="top">
+								<div class="tag_hole"></div>
+								<h2><img src="corgi.jpg"  class= "avatar" alt="Avatar" ></h2>
+							</div>
+							<div class="bottom_info_box">
+								<h2>Pillow Li </h2>
+								<h5>Doggy Leader</h5>
+								<h3>Doggy Academy</h3>
+							</div>
+						</div>
+
+						<div class = "id_card__face id_card__face-back">
+							<div class="tag_hole"></div>
+							<div class="back_info_box">
+								<h2>Pillow Li </h2>
+								<h5>Doggy Leader</h5>
+								<h3>Doggy Academy</h3>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+					
+			</div>
+
+				<i 	
+			id="slideRight"
+			class="fa fa-chevron-right arrow"
+		></i>	
+	</div>
+	</center>
+
+	<script type="text/javascript">
+		function createCard(avatar, front_info, back_info){
+			card = "<div class = \"panel\"><div class = \"id_card\"><div class = \"id_card__face id_card__face-front\">";
+			//front top part
+			card += "<div class=\"top\"><div class=\"tag_hole\"></div><h2><img src=\"" + avatar +"\"  class= \"avatar\" alt=\"Avatar\" ></h2></div>";
+			//front buttom part
+			card +="<div class=\"bottom_info_box\">" + front_info + "</div></div>";
+
+			card += "<div class = \"id_card__face id_card__face-back\"><div class=\"tag_hole\"></div><div class=\"back_info_box\">"+back_info +"</div></div></div></div>";
+			document.getElementById('slider').innerHTML += card;
+		}
+
+		demofront = "<h2>Pillow Li </h2><h5>Doggy Leader</h5><h3>Doggy Academy</h3>";
+		demoback = "<h2>Pillow Li </h2><h5>Doggy Leader</h5><h3>Doggy Academy</h3>";
+
+		//createCard("corgi.jpg", demofront, demoback);
+		createCard("corgi.jpg", demofront, demoback);
+		
+		document.querySelectorAll(".id_card").forEach(card => {
+  			card.addEventListener('click', () => {
+    		card.classList.toggle('is-flipped');
+  			});
+		});
+
+
+
+		let buttonRight = document.getElementById('slideRight');
+		let buttonLeft = document.getElementById('slideLeft');
+
+		buttonLeft.addEventListener('click', function(){
+			document.getElementById('slider').scrollLeft -= 180
+		})
+
+		buttonRight.addEventListener('click', function(){
+			document.getElementById('slider').scrollLeft += 180
+		})
+
+		
+
+	</script>
+
+	<script language="javascript">
+		
+	</script>
+	
+
+</body>
 </html>
+
 
