@@ -90,8 +90,8 @@
                     info += 'Male &nbsp<input type="radio" id="female" name="sex' + i + '"value="female">';
                     info += 'Female &nbsp<input type="radio" id="other" name="sex' + i + '""value="other" > Other<br><br>';
                     info += '<input type="radio" style="display:none;" name="sex' + i + '"value="" checked> ';
-                    info += '<label for = "age"> Please enter your age: </label><input value = 20 type = "number" min="0" max="100" required id = "age" name = "age' + i + '"><br>';
-                    info += '<label for = "nationality"> Please select your nationality: </label><select name = "nationality' + i + '" id = "nationality">';
+                    info += 'Please enter your age: <br><input value = 20 type = "number" min="0" max="100" required id = "age" name = "age' + i + '"><br>';
+                    info += 'Please select your nationality: <br><select name = "nationality' + i + '" id = "nationality">';
                     info += `
                     <option value = "" checked> Random </option>
                     <option value = "au"> Australia </option>
@@ -113,7 +113,7 @@
                     <option value = "us"> United States </option>
                     </select> </br> </br>
                 `;
-                    info += '<label for = "ethnicity"> Please select your ethnicity: </label><select name = "ethnicity' + i + '" id = "ethnicity" onchange ="change_enthnicity()">';
+                    info += ' Please select your ethnicity: <br><select name = "ethnicity' + i + '" id = "ethnicity" onchange ="change_enthnicity()">';
                     info += `
                     <option value = "" checked> Random </option>
                     <option value = "white"> White </option>
@@ -122,7 +122,7 @@
                     <option value = "latino"> Latino </option>
                     </select> </br> </br>
                 `;
-                    info += '<label for = "eyecolor"> Please select your eye color: </label><select name = "eyecolor' + i + '" id = "eyecolor" onchange ="change_eyecolor()">';
+                    info += ' Please select your eye color: <br><select name = "eyecolor' + i + '" id = "eyecolor" onchange ="change_eyecolor()">';
                     info += `
                         <option value = "" checked> Random </option>
                         <option value = "brown"> Brown </option>
@@ -130,7 +130,7 @@
                         <option value = "grey" > Grey </option>
                         <option value = "green"> Green </option>
                         </select> </br> </br>
-                        <label for = "donor"> Please tell us whether or not you are an organ donor </label> 
+                        Please tell us whether or not you are an organ donor <br> 
                            `;
                     info += '<input type="radio" name="donor' + i + '" value="notdonor"/> Not an Organ Donor  &nbsp&nbsp';
                     info += '<input type="radio" name="donor' + i + '"value = "donor" /> Organ Donor';
