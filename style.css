@@ -114,7 +114,7 @@ legend {
 .label {
     font-size: 1.3em;
     display: block;
-    margin-bottom: 20px !important;
+    margin-bottom: 8px;
     font-weight: 300;
     display: inline;
 }
