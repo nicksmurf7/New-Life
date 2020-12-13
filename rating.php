@@ -32,13 +32,16 @@
             </form>
          </div>
          <?php
+            //connection information
             $host		= "localhost"; // Use Local Host Only       
             $username	= "id15495055_rating2020"; 
             $password	= "Amber.123456";  
             $db_name	= "id15495055_rating";  
             
+            //establish connection with the database
             $conn = mysqli_connect($host, $username, $password, $db_name); 
             
+            //if the connection fails, print the errors.
             if (!$conn) { 
             echo "Connection Error". PHP_EOL; 
             echo "Error Code: ". mysqli_connect_errno().PHP_EOL; 
@@ -58,6 +61,7 @@
             
             }
             
+            // if the user set the star, then print the thank you notes
             extract ($_POST);
             if(isset($star)){
             if($star > 0 & $star <6 ){
@@ -69,6 +73,7 @@
             ?>
          <div>
             <?php
+               //this function helps extract information from the database data
                function output_sql($sql_obj, $type){
                	while ($row = $sql_obj->fetch_assoc()) {
                 				return $row[$type];
@@ -76,11 +81,14 @@
                	return "0 elements";
                }
                
+               //calculate average
                $average = round(output_sql($conn->query("SELECT SUM(count*star)/SUM(count) as avg FROM star"),'avg'), 2);
+               //return total number of reviews
                $sum = output_sql($conn->query("SELECT SUM(count) as sum FROM star"), 'sum');
                
                ?>
             <script language = "javascript">
+               //send the user review to form-submit.php, which will stores the review into database.
                $(function() {
                	$('input[type=radio]').on('change', function(e) {
                	    //$(this).closest("form").submit();
